@@ -1,0 +1,7 @@
+﻿  sample.cpp
+c:\users\poi\desktop\sample\samplefreeglut\sample.cpp(1096): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+sample.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+  Sample.vcxproj -> C:\Users\Poi\Desktop\Sample\SampleFreeGlut\.\Debug\Sample.exe
+c:\users\poi\desktop\sample\samplefreeglut\sample.cpp(1132): warning C6001: Using uninitialized memory 'g'.
+c:\users\poi\desktop\sample\samplefreeglut\sample.cpp(1131): warning C6001: Using uninitialized memory 'r'.
+c:\users\poi\desktop\sample\samplefreeglut\sample.cpp(1133): warning C6001: Using uninitialized memory 'b'.
