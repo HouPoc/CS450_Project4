@@ -14,8 +14,8 @@
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include "glut.h"
-
-
+#include "glslprogram.h"
+#include "sphere.h"
 //	This is a sample OpenGL / GLUT program
 //
 //	The objective is to draw a 3d object and change the color of the axes
@@ -183,7 +183,7 @@ int		WhichColor;				// index into Colors[ ]
 int		WhichProjection;		// ORTHO or PERSP
 int		Xmouse, Ymouse;			// mouse values
 float	Xrot, Yrot;				// rotation angles in degrees
-
+GLSLProgram	*Pattern;
 
 // function prototypes:
 
@@ -277,11 +277,12 @@ Animate( )
 }
 
 
-// draw the complete scene:
+// draw the complete scene: display_1
 
 void
 Display( )
 {
+
 	if( DebugOn != 0 )
 	{
 		fprintf( stderr, "Display\n" );
@@ -336,7 +337,7 @@ Display( )
 
 	// set the eye position, look-at position, and up-vector:
 
-	gluLookAt( 0., 0., 3.,     0., 0., 0.,     0., 1., 0. );
+	gluLookAt( 2., 0., 2.,     0., 0., 0.,     0., 1., 0. );
 
 
 	// rotate the scene:
@@ -368,14 +369,19 @@ Display( )
 		glDisable( GL_FOG );
 	}
 
+	if (AxesOn != 0)
+	{
+		glColor3fv(&Colors[WhichColor][0]);
+		glCallList(AxesList);
+	}
+
+	Pattern->Use();
+	Pattern->SetUniformVariable("uTime", Time);
+	MjbSphere(1., 20, 20);
+	Pattern->Use(0);
 
 	// possibly draw the axes:
 
-	if( AxesOn != 0 )
-	{
-		glColor3fv( &Colors[WhichColor][0] );
-		glCallList( AxesList );
-	}
 
 
 	// since we are using glScalef( ), be sure normals get unitized:
@@ -384,15 +390,6 @@ Display( )
 
 
 	// draw the current object:
-
-	glCallList( BoxList );
-
-
-	// draw some gratuitous text that just rotates on top of the scene:
-
-	glDisable( GL_DEPTH_TEST );
-	glColor3f( 0., 1., 1. );
-	DoRasterString( 0., 1., 0., "Text That Moves" );
 
 
 	// draw some gratuitous text that is fixed on the screen:
@@ -412,7 +409,6 @@ Display( )
 	glMatrixMode( GL_MODELVIEW );
 	glLoadIdentity( );
 	glColor3f( 1., 1., 1. );
-	DoRasterString( 5., 5., 0., "Text That Doesn't" );
 
 
 	// swap the double-buffered framebuffers:
@@ -680,9 +676,22 @@ InitGraphics( )
 		fprintf( stderr, "GLEW initialized OK\n" );
 	fprintf( stderr, "Status: Using GLEW %s\n", glewGetString(GLEW_VERSION));
 #endif
+	
+	Pattern = new GLSLProgram();
+	bool valid = Pattern->Create("pattern.vert", "pattern.frag");
+	if (!valid)
+	{
+		fprintf(stderr, "Shader cannot be created!\n");
+		DoMainMenu(QUIT);
+	}
+	else
+	{
+		fprintf(stderr, "Shader created.\n");
+	}
+	Pattern->SetVerbose(false);
 
 }
-
+//#include "glslprogram.cpp"
 
 // initialize the display lists that will not change:
 // (a display list is a way to store opengl commands in

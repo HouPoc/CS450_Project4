@@ -1,7 +1,10 @@
 ﻿  sample.cpp
-c:\users\poi\desktop\sample\samplefreeglut\sample.cpp(1096): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-sample.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
-  Sample.vcxproj -> C:\Users\Poi\Desktop\Sample\SampleFreeGlut\.\Debug\Sample.exe
-c:\users\poi\desktop\sample\samplefreeglut\sample.cpp(1132): warning C6001: Using uninitialized memory 'g'.
-c:\users\poi\desktop\sample\samplefreeglut\sample.cpp(1131): warning C6001: Using uninitialized memory 'r'.
-c:\users\poi\desktop\sample\samplefreeglut\sample.cpp(1133): warning C6001: Using uninitialized memory 'b'.
+c:\users\poi\documents\github\cs450_project4\sample\samplefreeglut\sphere.h(59): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\poi\documents\github\cs450_project4\sample\samplefreeglut\sphere.h(64): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\poi\documents\github\cs450_project4\sample\samplefreeglut\sphere.h(74): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\poi\documents\github\cs450_project4\sample\samplefreeglut\sphere.h(75): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\poi\documents\github\cs450_project4\sample\samplefreeglut\sphere.h(91): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\poi\documents\github\cs450_project4\sample\samplefreeglut\sphere.h(111): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\poi\documents\github\cs450_project4\sample\samplefreeglut\sphere.h(132): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+glslprogram.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+  Sample.vcxproj -> C:\Users\Poi\Documents\GitHub\CS450_Project4\Sample\SampleFreeGlut\.\Debug\Sample.exe
