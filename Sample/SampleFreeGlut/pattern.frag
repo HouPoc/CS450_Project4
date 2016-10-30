@@ -6,10 +6,6 @@ in vec2  	vST;		// texture coords
 void
 main( )
 {
-	vec3 myColor = vec3( ??? );
-	if( ??? )
-	{
-		myColor = vec3( ??? );
-	}
+	vec3 myColor = vec3(1., 1., 1. );
 	gl_FragColor = vec4( myColor,  1. );
 }

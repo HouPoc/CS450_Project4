@@ -26,6 +26,9 @@
     <ClInclude Include="glslprogram.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="sphere.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="pattern.frag">

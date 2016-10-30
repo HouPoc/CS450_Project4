@@ -135,6 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="glslprogram.h" />
+    <ClInclude Include="sphere.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="pattern.frag" />
