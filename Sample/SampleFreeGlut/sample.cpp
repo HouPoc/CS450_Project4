@@ -14,8 +14,8 @@
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include "glut.h"
-
-
+#include "glslprogram.h"
+#include "glslprogram.cpp"
 //	This is a sample OpenGL / GLUT program
 //
 //	The objective is to draw a 3d object and change the color of the axes
@@ -385,15 +385,6 @@ Display( )
 
 	// draw the current object:
 
-	glCallList( BoxList );
-
-
-	// draw some gratuitous text that just rotates on top of the scene:
-
-	glDisable( GL_DEPTH_TEST );
-	glColor3f( 0., 1., 1. );
-	DoRasterString( 0., 1., 0., "Text That Moves" );
-
 
 	// draw some gratuitous text that is fixed on the screen:
 	//
@@ -412,7 +403,6 @@ Display( )
 	glMatrixMode( GL_MODELVIEW );
 	glLoadIdentity( );
 	glColor3f( 1., 1., 1. );
-	DoRasterString( 5., 5., 0., "Text That Doesn't" );
 
 
 	// swap the double-buffered framebuffers:
