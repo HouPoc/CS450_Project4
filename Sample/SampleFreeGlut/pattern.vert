@@ -12,8 +12,6 @@ main( )
 { 
 	vST = gl_MultiTexCoord0.st;
 	vec3 vert = gl_Vertex.xyz;
-	if (vert.x <3.) {
 	vert.x = vert.x + 1.;
-	}
 	gl_Position = gl_ModelViewProjectionMatrix * vec4( vert, 1. );
 }
