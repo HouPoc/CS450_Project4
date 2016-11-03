@@ -12,6 +12,7 @@ main( )
 { 
 	vST = gl_MultiTexCoord0.st;
 	vec3 vert = gl_Vertex.xyz;
-	vert.x = vert.x + 1.;
+	vert.x = vert.x + 1. * cos( uTime * PI * 2.);
+	vert.z = vert.z + 1. * sin( uTime * PI * 2.);
 	gl_Position = gl_ModelViewProjectionMatrix * vec4( vert, 1. );
 }
