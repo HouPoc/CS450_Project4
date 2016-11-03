@@ -1,22 +1,10 @@
-﻿Build started 2016/11/1 7:33:21.
-     1>Project "C:\Users\Wenbo\Documents\GitHub\CS450_Project4\Sample\SampleFreeGlut\Sample.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo".\Debug/" /Fd".\Debug/vc140.pdb" /Gd /TP /analyze- /errorReport:prompt sample.cpp
-         sample.cpp
-     1>c:\users\wenbo\documents\github\cs450_project4\sample\samplefreeglut\sphere.h(59): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-     1>c:\users\wenbo\documents\github\cs450_project4\sample\samplefreeglut\sphere.h(64): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-     1>c:\users\wenbo\documents\github\cs450_project4\sample\samplefreeglut\sphere.h(74): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-     1>c:\users\wenbo\documents\github\cs450_project4\sample\samplefreeglut\sphere.h(75): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-     1>c:\users\wenbo\documents\github\cs450_project4\sample\samplefreeglut\sphere.h(91): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-     1>c:\users\wenbo\documents\github\cs450_project4\sample\samplefreeglut\sphere.h(111): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-     1>c:\users\wenbo\documents\github\cs450_project4\sample\samplefreeglut\sphere.h(132): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug/Sample.exe" /INCREMENTAL:NO /NOLOGO glew32.lib freeglut.lib glu32.lib opengl32.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:".\Debug/Sample.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE:NO /IMPLIB:".\Debug\Sample.lib" /MACHINE:X86 /SAFESEH .\Debug/glslprogram.obj
-         .\Debug/sample.obj
-     1>glslprogram.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
-         Sample.vcxproj -> C:\Users\Wenbo\Documents\GitHub\CS450_Project4\Sample\SampleFreeGlut\.\Debug\Sample.exe
-     1>Done Building Project "C:\Users\Wenbo\Documents\GitHub\CS450_Project4\Sample\SampleFreeGlut\Sample.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:05.05
+﻿  sample.cpp
+c:\users\poi\documents\github\cs450_project4\sample\samplefreeglut\sphere.h(58): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\poi\documents\github\cs450_project4\sample\samplefreeglut\sphere.h(63): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\poi\documents\github\cs450_project4\sample\samplefreeglut\sphere.h(73): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\poi\documents\github\cs450_project4\sample\samplefreeglut\sphere.h(74): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\poi\documents\github\cs450_project4\sample\samplefreeglut\sphere.h(90): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\poi\documents\github\cs450_project4\sample\samplefreeglut\sphere.h(110): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\poi\documents\github\cs450_project4\sample\samplefreeglut\sphere.h(131): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+glslprogram.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+  Sample.vcxproj -> C:\Users\Poi\Documents\GitHub\CS450_Project4\Sample\SampleFreeGlut\.\Debug\Sample.exe

@@ -1,4 +1,3 @@
-float	Time;
 
 struct point {
 	float x, y, z;		// coordinates
