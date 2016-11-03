@@ -183,6 +183,7 @@ int		WhichColor;				// index into Colors[ ]
 int		WhichProjection;		// ORTHO or PERSP
 int		Xmouse, Ymouse;			// mouse values
 float	Xrot, Yrot;				// rotation angles in degrees
+float	Time;
 GLSLProgram	*Pattern;
 
 // function prototypes:
@@ -340,7 +341,7 @@ Display( )
 
 	// set the eye position, look-at position, and up-vector:
 
-	gluLookAt( 2., 0., 2.,     0., 0., 0.,     0., 1., 0. );
+	gluLookAt( 4., 0., 4.,     0., 0., 0.,     0., 1., 0. );
 
 
 	// rotate the scene:
@@ -380,7 +381,7 @@ Display( )
 
 	Pattern->Use();
 	Pattern->SetUniformVariable("uTime", Time);
-	MjbSphere(1., 20, 20);
+	MjbSphere(.5, 20, 20);
 	Pattern->Use(0);
 
 	// possibly draw the axes:
