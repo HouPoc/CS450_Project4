@@ -184,7 +184,7 @@ int		WhichProjection;		// ORTHO or PERSP
 int		Xmouse, Ymouse;			// mouse values
 float	Xrot, Yrot;				// rotation angles in degrees
 float	Time;
-bool	Freeze, Pattern_All;
+bool	Freeze, Pattern_All, Pattern_VTX, Pattern_FRG;
 GLSLProgram	*Pattern;
 
 // function prototypes:
@@ -382,6 +382,8 @@ Display( )
 	if (Pattern_All) {
 		Pattern->Use();
 		Pattern->SetUniformVariable("uTime", Time);
+		Pattern->SetUniformVariable("uParttern_VEX", Pattern_VTX);
+		Pattern->SetUniformVariable("uParttern_FRG", Pattern_FRG);
 	}
 	MjbSphere(.5, 20, 20);
 	Pattern->Use(0);
@@ -794,7 +796,6 @@ Keyboard( unsigned char c, int x, int y )
 			break;
 
 		case 'f':
-		case 'F':
 			Freeze = !Freeze;
 			if (Freeze)
 				glutIdleFunc(NULL);
@@ -805,6 +806,20 @@ Keyboard( unsigned char c, int x, int y )
 		case 'n':
 		case 'N':
 			Pattern_All = FALSE;
+			break;
+
+		case 'b':
+		case 'B':
+			Pattern_All = TRUE;
+			break;
+
+		case 'F':
+			Pattern_FRG = TRUE ;
+			break;
+
+		case 'V':
+		case 'v':
+			Pattern_VTX = TRUE;
 			break;
 
 		case 'p':

@@ -1,6 +1,7 @@
 #version 330 compatibility
 
 uniform float	uTime;		// "Time", from Animate( )
+uniform	bool	uParttern_FRG;
 in vec2  	vST;		// texture coords
 in vec4		vColor;		// object color
 vec4  myColor;
