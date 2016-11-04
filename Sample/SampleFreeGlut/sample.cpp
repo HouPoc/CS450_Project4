@@ -184,6 +184,7 @@ int		WhichProjection;		// ORTHO or PERSP
 int		Xmouse, Ymouse;			// mouse values
 float	Xrot, Yrot;				// rotation angles in degrees
 float	Time;
+bool	Freeze, Pattern_All;
 GLSLProgram	*Pattern;
 
 // function prototypes:
@@ -378,9 +379,10 @@ Display( )
 		glColor3fv(&Colors[WhichColor][0]);
 		glCallList(AxesList);
 	}
-
-	Pattern->Use();
-	Pattern->SetUniformVariable("uTime", Time);
+	if (Pattern_All) {
+		Pattern->Use();
+		Pattern->SetUniformVariable("uTime", Time);
+	}
 	MjbSphere(.5, 20, 20);
 	Pattern->Use(0);
 
@@ -791,6 +793,20 @@ Keyboard( unsigned char c, int x, int y )
 			WhichProjection = ORTHO;
 			break;
 
+		case 'f':
+		case 'F':
+			Freeze = !Freeze;
+			if (Freeze)
+				glutIdleFunc(NULL);
+			else
+				glutIdleFunc(Animate);
+			break;
+
+		case 'n':
+		case 'N':
+			Pattern_All = FALSE;
+			break;
+
 		case 'p':
 		case 'P':
 			WhichProjection = PERSP;
@@ -910,6 +926,8 @@ Reset( )
 	WhichColor = WHITE;
 	WhichProjection = PERSP;
 	Xrot = Yrot = 0.;
+	Pattern_All = TRUE;
+	Freeze = FALSE;
 }
 
 
