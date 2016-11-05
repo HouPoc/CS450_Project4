@@ -811,15 +811,20 @@ Keyboard( unsigned char c, int x, int y )
 		case 'b':
 		case 'B':
 			Pattern_All = TRUE;
+			Pattern_FRG = TRUE;
+			Pattern_VTX = TRUE;
 			break;
 
 		case 'F':
+			Pattern_All = TRUE;
 			Pattern_FRG = TRUE ;
+			Pattern_VTX = FALSE;
 			break;
 
 		case 'V':
-		case 'v':
+			Pattern_All = TRUE;
 			Pattern_VTX = TRUE;
+			Pattern_FRG = FALSE;
 			break;
 
 		case 'p':

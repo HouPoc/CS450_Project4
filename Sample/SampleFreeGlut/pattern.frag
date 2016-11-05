@@ -8,8 +8,13 @@ vec4  myColor;
 void
 main( )
 {
-	if (vST.s >=0.35 && vST.s <=0.65 && vST.t >= 0.35 && vST.t <=vST.s) {
-		myColor =vec4 (uTime, .5, uTime, 1.);
+    if (uParttern_FRG) {
+		if (vST.s >=0.35 && vST.s <=0.65 && vST.t >= 0.35 && vST.t <=vST.s) {
+			myColor =vec4 (uTime, .5, uTime, 1.);
+		}
+		else {
+			myColor = vColor;
+		}
 	}
 	else {
 		myColor = vColor;
